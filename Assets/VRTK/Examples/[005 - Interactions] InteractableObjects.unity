@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15755,11 +15755,8 @@ MonoBehaviour:
   autoManageVRSettings: 0
   autoLoadSetup: 1
   setups:
-  - {fileID: 1122313605}
-  - {fileID: 1304472947}
-  - {fileID: 1243035853}
   - {fileID: 1500158668}
-  - {fileID: 1178460573}
+  - {fileID: 1122313605}
   excludeTargetGroups: 1a0000001b000000
   persistOnLoad: 0
 --- !u!4 &587475395
@@ -25227,7 +25224,7 @@ MonoBehaviour:
   DefaultHandMaterialManager: {fileID: 1373104860}
   Driver: {fileID: 946975881}
   oculusUserID: 0
-  EnableBody: 1
+  EnableBody: 0
   EnableHands: 1
   EnableBase: 0
   EnableExpressive: 1
@@ -29647,7 +29644,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 1824762710}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000074505766, y: -1.0399965, z: 0.000035762787}
+  m_ConnectedAnchor: {x: -0.0000007450577, y: -1.0399965, z: 0.000035762787}
   serializedVersion: 2
   m_Spring: 10000
   m_Damper: 10000
@@ -46765,16 +46762,6 @@ PrefabInstance:
       propertyPath: m_FontData.m_VerticalOverflow
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224044212099514402, guid: 3d56870ea5ab696448e35ecae56a6c5e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 224044212099514402, guid: 3d56870ea5ab696448e35ecae56a6c5e,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 224371738333264858, guid: 3d56870ea5ab696448e35ecae56a6c5e,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -46784,6 +46771,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 224044212099514402, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 224044212099514402, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d56870ea5ab696448e35ecae56a6c5e, type: 3}
@@ -50402,27 +50399,27 @@ MonoBehaviour:
   actualHeadset: {fileID: 1239190105}
   actualLeftController: {fileID: 26480470}
   actualRightController: {fileID: 331648348}
-  modelAliasLeftController: {fileID: 0}
-  modelAliasRightController: {fileID: 0}
+  modelAliasLeftController: {fileID: 908960952}
+  modelAliasRightController: {fileID: 3233428}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
-    typeName: VRTK.SDK_UnitySystem
+    typeName: VRTK.SDK_OculusSystem
     descriptionIndex: 0
   cachedBoundariesSDKInfo:
     baseTypeName: VRTK.SDK_BaseBoundaries
     fallbackTypeName: VRTK.SDK_FallbackBoundaries
-    typeName: VRTK.SDK_UnityBoundaries
+    typeName: VRTK.SDK_OculusBoundaries
     descriptionIndex: 0
   cachedHeadsetSDKInfo:
     baseTypeName: VRTK.SDK_BaseHeadset
     fallbackTypeName: VRTK.SDK_FallbackHeadset
-    typeName: VRTK.SDK_UnityHeadset
+    typeName: VRTK.SDK_OculusHeadset
     descriptionIndex: 0
   cachedControllerSDKInfo:
     baseTypeName: VRTK.SDK_BaseController
     fallbackTypeName: VRTK.SDK_FallbackController
-    typeName: VRTK.SDK_UnityController
+    typeName: VRTK.SDK_OculusController
     descriptionIndex: 0
 --- !u!1 &1504424431
 GameObject:
@@ -63673,7 +63670,7 @@ MonoBehaviour:
   virtualGreenScreenBottomY: -10
   virtualGreenScreenApplyDepthCulling: 0
   virtualGreenScreenDepthTolerance: 0.2
-  _trackingOriginType: 0
+  _trackingOriginType: 2
   usePositionTracking: 1
   useRotationTracking: 1
   useIPDInPositionTracking: 1
