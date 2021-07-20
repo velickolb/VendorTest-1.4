@@ -40,7 +40,6 @@
         protected virtual void StartScrew()
         {
             screwModel.SetActive(true);
-            print("sad");
         }
 
         protected virtual void StopScrew()
