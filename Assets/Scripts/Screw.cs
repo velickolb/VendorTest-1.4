@@ -5,6 +5,7 @@
     public class Screw : MonoBehaviour
     {
         public VRTK_InteractableObject linkedObject;
+        public GameObject screwModel;
 
         protected virtual void OnEnable()
         {
@@ -13,6 +14,7 @@
             if (linkedObject != null)
             {
                 linkedObject.InteractableObjectUsed += InteractableObjectUsed;
+                linkedObject.InteractableObjectUnused += InteractableObjectUnused;
             }
         }
 
@@ -21,17 +23,28 @@
             if (linkedObject != null)
             {
                 linkedObject.InteractableObjectUsed -= InteractableObjectUsed;
+                linkedObject.InteractableObjectUnused -= InteractableObjectUnused;
             }
         }
 
         protected virtual void InteractableObjectUsed(object sender, InteractableObjectEventArgs e)
         {
-            Screwing();
+            StartScrew();
         }
 
-        protected virtual void Screwing()
+        protected virtual void InteractableObjectUnused(object sender, InteractableObjectEventArgs e)
         {
-            print("SCREWING");
+            StopScrew();
+        }
+
+        protected virtual void StartScrew()
+        {
+            screwModel.SetActive(true);
+        }
+
+        protected virtual void StopScrew()
+        {
+            screwModel.SetActive(false);
         }
     }
 }
