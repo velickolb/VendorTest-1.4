@@ -48,13 +48,12 @@
 
                 if(bit.GetComponent<SphereCollider>().bounds.Contains(target.transform.position) && target.transform.position.y > 0.7992f)
                 {
-                    print("srafiii");
                     target.transform.Rotate(new Vector3(0f,spinSpeed * Time.deltaTime, 0f));
                     target.transform.Translate(new Vector3(0f,Time.deltaTime*-0.01f, 0f));
                 }
                 else
                 {
-                    Debug.Log(" NOT SCREWING");
+                    Debug.Log("NOT SCREWING");
                 }
 
             }

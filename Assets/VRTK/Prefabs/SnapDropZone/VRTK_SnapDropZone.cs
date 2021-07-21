@@ -700,6 +700,7 @@ namespace VRTK
                     if (transitionInPlaceRoutine != null)
                     {
                         StopCoroutine(transitionInPlaceRoutine);
+                        
                     }
 
                     isSnapped = true;
@@ -715,6 +716,7 @@ namespace VRTK
                     }
 
                     interactableObjectCheck.ToggleSnapDropZone(this, true);
+                    interactableObjectCheck.transform.parent = highlightContainer.transform;
                 }
             }
 
