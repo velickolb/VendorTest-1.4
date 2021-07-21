@@ -7,6 +7,7 @@
     public class Screw : MonoBehaviour
     {
         public VRTK_InteractableObject linkedObject;
+        public VRTK_SnapDropZone dropZone;
         public Transform head;
 
         public float spinSpeed = 180f;
@@ -16,9 +17,9 @@
         public GameObject bit;
         public GameObject target;
 
-        public bool IsConnected;
+        public AudioClip ConnectSound;
 
-        
+        public Transform HoseAttackPoint;
 
         protected virtual void OnEnable()
         {
@@ -28,11 +29,16 @@
             {
                 linkedObject.InteractableObjectUsed += InteractableObjectUsed;
                 linkedObject.InteractableObjectUnused += InteractableObjectUnused;
+
+                dropZone.ObjectSnappedToDropZone += ConnectHose;
             }
 
         }
 
-
+        private Action<SnapDropZoneEventArgs> ParentHose()
+        {
+            throw new NotImplementedException();
+        }
 
         protected virtual void OnDisable()
         {
@@ -40,6 +46,8 @@
             {
                 linkedObject.InteractableObjectUsed -= InteractableObjectUsed;
                 linkedObject.InteractableObjectUnused -= InteractableObjectUnused;
+
+                dropZone.ObjectSnappedToDropZone -= ConnectHose;
             }
 
         }
@@ -81,6 +89,13 @@
         protected virtual void StopScrew()
         {
             spinning = false;
+        }
+
+        protected virtual void ConnectHose(object sender, SnapDropZoneEventArgs e)
+        {   
+            HoseAttackPoint.SetParent(dropZone.transform.parent.transform);
+
+            print(dropZone.transform.parent.transform.name);
         }
     }
 }
