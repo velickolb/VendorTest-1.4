@@ -105,10 +105,7 @@ namespace VRTK
         /// Emitted when an interactable object is removed from a snapped drop zone.
         /// </summary>
         public event SnapDropZoneEventHandler ObjectUnsnappedFromDropZone;
-        /// <summary>
-        /// Emmited when hose is connected
-        /// </summary>
-        public event InteractableObjectEventHandler OnHoseConnected;
+
 
         protected GameObject previousPrefab;
         protected GameObject highlightContainer;
@@ -723,7 +720,6 @@ namespace VRTK
                     interactableObjectCheck.ToggleSnapDropZone(this, true);
                     interactableObjectCheck.transform.parent = highlightContainer.transform;
 
-                    HoseConnected(SetInteractableObjectEvent(this.gameObject));
                 }
             }
 
@@ -1201,19 +1197,6 @@ namespace VRTK
             io.OverridePreviousState(parent, kinematic, grabbable);
         }
 
-        public virtual void HoseConnected(InteractableObjectEventArgs e)
-        {
-            if (OnHoseConnected != null)
-            {
-                OnHoseConnected(this, e);
-            }
-        }
 
-        public InteractableObjectEventArgs SetInteractableObjectEvent(GameObject interactingObject)
-        {
-            InteractableObjectEventArgs e;
-            e.interactingObject = interactingObject;
-            return e;
-        }
     }
 }
