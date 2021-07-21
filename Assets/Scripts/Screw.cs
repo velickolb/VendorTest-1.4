@@ -35,12 +35,13 @@
         /// Fired on screw reaching limit
         /// </summary>
         UnityEvent OnScrewed;
+        public GameObject trigger;
 
 
         /// <summary>
         /// Info canvases
         /// </summary>
-        public GameObject FinishedBoard,StartingBoard;
+        public GameObject FinishedBoard,StartingBoard,ExitBoard,ScrewBoard;
 
         /// <summary>
         /// Warning canvases
@@ -85,14 +86,15 @@
         {
             if (isSpinning)
             {
+
                 head.transform.Rotate(new Vector3(-1 * spinSpeed * Time.deltaTime,0f,0f));
 
-                if (bit.GetComponent<SphereCollider>().bounds.Contains(target.transform.position) && target.transform.position.y > 0.8000f)
+                if (bit.GetComponent<SphereCollider>().bounds.Contains(target.transform.position) && target.transform.localPosition.y > 0.5924f)
                 {
                     target.transform.Rotate(new Vector3(0f, spinSpeed * Time.deltaTime, 0f));
                     target.transform.Translate(new Vector3(0f, Time.deltaTime * -0.01f, 0f));
                 }
-                else if (target.transform.position.y < 0.8000f)
+                else if (target.transform.localPosition.y < 0.5924f)
                 {
                     OnScrewed.Invoke();
                 }
@@ -102,6 +104,7 @@
                 }
 
             }
+            
         }
 
         protected virtual void InteractableObjectUsed(object sender, InteractableObjectEventArgs e)
@@ -110,11 +113,16 @@
                 StartScrew();
             else
                 HoseNotConnected.SetActive(true);
+
+            trigger.transform.localPosition -= new Vector3(0, 0, 0.01f);
+            
+
         }
 
         protected virtual void InteractableObjectUnused(object sender, InteractableObjectEventArgs e)
         {
             StopScrew();
+            trigger.transform.localPosition += new Vector3(0, 0, 0.01f);
         }
 
         protected virtual void StartScrew()
@@ -131,15 +139,19 @@
         {   
             HoseAttackPoint.SetParent(dropZone.transform.parent.transform);
             HoseAttackPoint.Rotate(new Vector3(-90,0,0));
+            HoseAttackPoint.localScale = new Vector3(0.09f, 0.09f, 0.09f);
             IsConnected = true;
-            HoseNotConnected.SetActive(true);
+            HoseNotConnected.SetActive(false);
+            ScrewBoard.SetActive(true);
+            StartingBoard.SetActive(false);
             print(dropZone.transform.parent.transform.name);
         }
 
         private void Screwed()
         {
             FinishedBoard.SetActive(true);
-            StartingBoard.SetActive(false);
+            ScrewBoard.SetActive(false);
+            ExitBoard.SetActive(true);
         }
 
     }

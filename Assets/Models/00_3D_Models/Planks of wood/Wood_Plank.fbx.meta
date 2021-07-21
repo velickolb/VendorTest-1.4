@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 7dd641a9568a53a45a94b52854a5f6ed
+guid: 45a74522867d3cf438532aab7217c0e2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: ToolBox_texture
+    2100000: Wood_Texture
     2300000: //RootNode
     3300000: //RootNode
-    4300000: ToolBox
+    4300000: Wood
   externalObjects: {}
   materials:
     importMaterials: 1

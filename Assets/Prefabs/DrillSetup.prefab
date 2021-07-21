@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3700939251783067648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225279015186110038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3700939251783067650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225279015186110038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+--- !u!114 &3700939251783067653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225279015186110038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
 --- !u!1 &1356042909743619974
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +203,11 @@ MonoBehaviour:
   spinSpeed: 180
   bit: {fileID: 4705082497550697230}
   target: {fileID: 3700939252848063714}
-  IsConnected: 0
+  ConnectSound: {fileID: 0}
+  HoseAttackPoint: {fileID: 0}
+  FinishedBoard: {fileID: 0}
+  StartingBoard: {fileID: 0}
+  HoseNotConnected: {fileID: 0}
 --- !u!114 &1388746876272608984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,83 +419,6 @@ Transform:
   m_Father: {fileID: 1359359339053044846}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 165.625, y: 15.495987, z: 184.35}
---- !u!136 &3700939251783067652
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225279015186110038}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &3700939251783067648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225279015186110038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3700939251783067650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225279015186110038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
---- !u!114 &3700939251783067653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225279015186110038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 1
-  holdButtonToGrab: 1
-  stayGrabbedOnTeleport: 1
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
-  secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
 --- !u!1 &3700939252173428449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,38 +1401,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.19
   m_Center: {x: 0, y: -0.01, z: 0}
---- !u!114 &3700939253168799422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3701938159956415291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 1
-  checkType: 1
-  identifiers:
-  - SnapCube
---- !u!114 &3700939253168799362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3701938159956415291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dc366c4ab9b63a4dad97fc1290dc00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  unhighlightOnDisable: 1
-  emissionDarken: 50
-  customMaterial: {fileID: 2100000, guid: eab5111f6a22e2c4ea9a1e9165611f3f, type: 2}
 --- !u!1 &3700939253244906147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,6 +1435,38 @@ Transform:
   m_Father: {fileID: 3700939252173851329}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 32.473003, y: -90, z: 0}
+--- !u!114 &3700939253168799362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3701938159956415291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc366c4ab9b63a4dad97fc1290dc00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  unhighlightOnDisable: 1
+  emissionDarken: 50
+  customMaterial: {fileID: 2100000, guid: eab5111f6a22e2c4ea9a1e9165611f3f, type: 2}
+--- !u!114 &3700939253168799422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3701938159956415291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operation: 1
+  checkType: 1
+  identifiers:
+  - SnapCube
 --- !u!1 &4705082497550697216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +2227,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: SnapCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493731965927843951, guid: 438c5281790a6e94fb5c6f44a34044f9,
+        type: 3}
+      propertyPath: m_TagString
+      value: SnapCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493731965927843951, guid: 438c5281790a6e94fb5c6f44a34044f9,
+        type: 3}
+      propertyPath: m_Name
+      value: AttachPoint
       objectReference: {fileID: 0}
     - target: {fileID: 3493731966082292743, guid: 438c5281790a6e94fb5c6f44a34044f9,
         type: 3}
@@ -3798,11 +3798,6 @@ PrefabInstance:
       propertyPath: sectionThicknessScale
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 3493731966045991712, guid: 438c5281790a6e94fb5c6f44a34044f9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3493731965708981750, guid: 438c5281790a6e94fb5c6f44a34044f9,
         type: 3}
       propertyPath: m_UseGravity
@@ -3923,46 +3918,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3493731965708981748, guid: 438c5281790a6e94fb5c6f44a34044f9,
-        type: 3}
-      propertyPath: m_Name
-      value: EndPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493731965927843951, guid: 438c5281790a6e94fb5c6f44a34044f9,
-        type: 3}
-      propertyPath: m_TagString
-      value: SnapCube
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493731965927843951, guid: 438c5281790a6e94fb5c6f44a34044f9,
-        type: 3}
-      propertyPath: m_Name
-      value: AttachPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493731966045991741, guid: 438c5281790a6e94fb5c6f44a34044f9,
-        type: 3}
-      propertyPath: m_Name
-      value: Hose
-      objectReference: {fileID: 0}
     - target: {fileID: 3493731965708981751, guid: 438c5281790a6e94fb5c6f44a34044f9,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3493731965927843924, guid: 438c5281790a6e94fb5c6f44a34044f9,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 3493731965927843946, guid: 438c5281790a6e94fb5c6f44a34044f9,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3493731965927843926, guid: 438c5281790a6e94fb5c6f44a34044f9,
-        type: 3}
-      propertyPath: unityCollider
-      value: 
-      objectReference: {fileID: 3700939251783067652}
     - target: {fileID: 3493731966045991742, guid: 438c5281790a6e94fb5c6f44a34044f9,
         type: 3}
       propertyPath: controlPoints.Array.data[2].x
@@ -3988,17 +3953,42 @@ PrefabInstance:
       propertyPath: controlPoints.Array.data[3].z
       value: 2.4086857
       objectReference: {fileID: 0}
+    - target: {fileID: 3493731965708981748, guid: 438c5281790a6e94fb5c6f44a34044f9,
+        type: 3}
+      propertyPath: m_Name
+      value: EndPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493731966045991741, guid: 438c5281790a6e94fb5c6f44a34044f9,
+        type: 3}
+      propertyPath: m_Name
+      value: Hose
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493731965927843924, guid: 438c5281790a6e94fb5c6f44a34044f9,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3493731965927843926, guid: 438c5281790a6e94fb5c6f44a34044f9,
+        type: 3}
+      propertyPath: unityCollider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493731966045991712, guid: 438c5281790a6e94fb5c6f44a34044f9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438c5281790a6e94fb5c6f44a34044f9, type: 3}
---- !u!4 &225279015006102078 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3493731966082292743, guid: 438c5281790a6e94fb5c6f44a34044f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3700939253330148921}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &225279015186110038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3493731965927843951, guid: 438c5281790a6e94fb5c6f44a34044f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3700939253330148921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &225279015006102078 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3493731966082292743, guid: 438c5281790a6e94fb5c6f44a34044f9,
     type: 3}
   m_PrefabInstance: {fileID: 3700939253330148921}
   m_PrefabAsset: {fileID: 0}

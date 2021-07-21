@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main_Menu.unity
+    guid: 5c33458595b286f4ea64b17af992d26a
+  - enabled: 0
     path: Assets/VRTK/Examples/[005 - Interactions] InteractableObjects.unity
     guid: bece393a6b2458142935d8d7562c52d7
+  - enabled: 0
+    path: Assets/VRTK/LegacyExampleFiles/008_Controller_UsingAGrabbedObject.unity
+    guid: 608fa314af22b7044b813d2ff2d3b51d
+  - enabled: 0
+    path: Assets/Scenes/PlantSafety_Workshop.unity
+    guid: 5f712ad684287db449bbd0aaa3aa08a3
+  - enabled: 1
+    path: Assets/Scenes/PlantSafety_Workshop.unity
+    guid: 0c863d1339e9ded478ad78b9fac54c2f
   m_configObjects: {}

@@ -1,20 +1,24 @@
 fileFormatVersion: 2
-guid: 7dd641a9568a53a45a94b52854a5f6ed
+guid: d9de3e709b708ea4490b890347bbd8e0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: ToolBox_texture
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: ToolBox
+    100000: polySurface8
+    100002: transform1
+    100004: //RootNode
+    400000: polySurface8
+    400002: transform1
+    400004: //RootNode
+    2100000: phongE1
+    2300000: polySurface8
+    3300000: polySurface8
+    4300000: polySurface8
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

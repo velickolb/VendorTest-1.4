@@ -126,8 +126,8 @@ namespace Obi.CrossPlatformInput.Inspector
                         defines.Remove(defineName);
                     }
                 }
-                string definesString = string.Join(";", defines.ToArray());
-                PlayerSettings.SetScriptingDefineSymbolsForGroup(group, definesString);
+                //string definesString = string.Join(";", defines.ToArray());
+                //PlayerSettings.SetScriptingDefineSymbolsForGroup(group, definesString);
             }
         }
 

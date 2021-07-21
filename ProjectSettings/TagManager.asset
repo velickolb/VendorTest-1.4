@@ -14,6 +14,7 @@ TagManager:
   - Torso
   - Head
   - ScrewTarget
+  - SnapHose
   layers:
   - Default
   - TransparentFX
