@@ -14,6 +14,7 @@
 
         public GameObject bit;
         public GameObject target;
+        public GameObject screwedCheck;
 
         LookAtConstraint lookAt;
 
@@ -21,7 +22,7 @@
         {
             linkedObject = (linkedObject == null ? GetComponent<VRTK_InteractableObject>() : linkedObject);
             
-            lookAt = (lookAt == null ? GetComponent<LookAtConstraint>() : lookAt);
+            //lookAt = (lookAt == null ? GetComponent<LookAtConstraint>() : lookAt);
 
             if (linkedObject != null)
             {
@@ -45,18 +46,15 @@
             {
                 head.transform.Rotate(new Vector3(-1 * spinSpeed * Time.deltaTime,0f,0f));
 
-                if(bit.GetComponent<SphereCollider>().bounds.Contains(target.transform.position))
+                if(bit.GetComponent<SphereCollider>().bounds.Contains(target.transform.position) && target.transform.position.y > 0.7992f)
                 {
+                    print("srafiii");
                     target.transform.Rotate(new Vector3(0f,-1 * spinSpeed * Time.deltaTime, 0f));
                     target.transform.Translate(new Vector3(0f,Time.deltaTime*-0.01f, 0f));
-
-                    lookAt.constraintActive = true;
-
                 }
                 else
                 {
                     Debug.Log(" NOT SCREWING");
-                    lookAt.constraintActive = false;
                 }
 
             }
@@ -70,7 +68,6 @@
         protected virtual void InteractableObjectUnused(object sender, InteractableObjectEventArgs e)
         {
             StopScrew();
-            lookAt.constraintActive = false;
         }
 
         protected virtual void StartScrew()
@@ -81,6 +78,12 @@
         protected virtual void StopScrew()
         {
             spinning = false;
+        }
+
+        bool IsScrewed()
+        {
+            print(bit.GetComponent<SphereCollider>().bounds.Contains(screwedCheck.transform.position));
+            return bit.GetComponent<SphereCollider>().bounds.Contains(screwedCheck.transform.position);
         }
     }
 }
