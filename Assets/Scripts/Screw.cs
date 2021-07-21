@@ -38,11 +38,12 @@
         {
             if (spinning)
             {
-                head.transform.Rotate(new Vector3(spinSpeed * Time.deltaTime,0f,0f));
+                head.transform.Rotate(new Vector3(-1 * spinSpeed * Time.deltaTime,0f,0f));
 
                 if(bit.GetComponent<SphereCollider>().bounds.Contains(target.transform.position))
                 {
-                    Debug.Log("SCREWING");
+                    target.transform.Rotate(new Vector3(0f,-1 * spinSpeed * Time.deltaTime, 0f));
+                    target.transform.Translate(new Vector3(0f,Time.deltaTime*-0.05f, 0f));
                 }
                 else
                 {
