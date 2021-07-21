@@ -1,11 +1,13 @@
 ﻿namespace VRTK.Examples
 {
+    using System;
     using UnityEngine;
     using UnityEngine.Animations;
 
     public class Screw : MonoBehaviour
     {
         public VRTK_InteractableObject linkedObject;
+        public VRTK_SnapDropZone dropZone;
         public Transform head;
 
         public float spinSpeed = 180f;
@@ -14,22 +16,29 @@
 
         public GameObject bit;
         public GameObject target;
-        public GameObject screwedCheck;
 
-        LookAtConstraint lookAt;
+        public bool IsConnected;
+
+        
 
         protected virtual void OnEnable()
         {
             linkedObject = (linkedObject == null ? GetComponent<VRTK_InteractableObject>() : linkedObject);
-            
-            //lookAt = (lookAt == null ? GetComponent<LookAtConstraint>() : lookAt);
+            dropZone = (dropZone == null ? GetComponent<VRTK_SnapDropZone>() : dropZone);
 
             if (linkedObject != null)
             {
                 linkedObject.InteractableObjectUsed += InteractableObjectUsed;
                 linkedObject.InteractableObjectUnused += InteractableObjectUnused;
             }
+
+            if (dropZone != null)
+            {
+                //dropZone.HoseConnected += HoseConnected;
+            }
         }
+
+
 
         protected virtual void OnDisable()
         {
@@ -37,6 +46,11 @@
             {
                 linkedObject.InteractableObjectUsed -= InteractableObjectUsed;
                 linkedObject.InteractableObjectUnused -= InteractableObjectUnused;
+            }
+
+            if (dropZone != null)
+            {
+                //dropZone.HoseConnected -= HoseConnected;
             }
         }
 
@@ -69,20 +83,21 @@
             StopScrew();
         }
 
-        protected virtual void StartScrew()
+        private void HoseConnected(object sender, SnapDropZoneEventArgs e)
         {
+            IsConnected = true;
+            throw new NotImplementedException();
+        }
+
+        protected virtual void StartScrew()
+        {   
+            if(IsConnected)
             spinning = true;
         }
 
         protected virtual void StopScrew()
         {
             spinning = false;
-        }
-
-        bool IsScrewed()
-        {
-            print(bit.GetComponent<SphereCollider>().bounds.Contains(screwedCheck.transform.position));
-            return bit.GetComponent<SphereCollider>().bounds.Contains(screwedCheck.transform.position);
         }
     }
 }
